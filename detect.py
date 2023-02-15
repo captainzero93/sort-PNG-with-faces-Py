@@ -4,7 +4,10 @@ from PIL import Image
 import concurrent.futures
 
 # Load the face detection model from Torch
-model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='yolov5x.pt', force_reload=True)
+
+# Set the detection threshold
+model.conf = 0.8
 
 # Define the input and output folders
 input_folder = '.'
