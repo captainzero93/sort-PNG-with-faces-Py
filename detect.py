@@ -7,7 +7,7 @@ import concurrent.futures
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='yolov5x.pt', force_reload=True)
 
 # Set the detection threshold
-model.conf = 1
+model.conf = 0.5
 
 # Define the input and output folders
 input_folder = '.'
